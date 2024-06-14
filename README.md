@@ -1,7 +1,7 @@
 
 1. Структура диплома  
 
-![struc](https://github.com/dmitri13/diplom/blob/main/img/structure.png)
+![struc](https://github.com/dmitri13/diplom/blob/main/image/structure.png)
 
 ansible - скрипты ansible для поднятия все сервисов на VM
 bastion - терраформ для поднятия бастиона
