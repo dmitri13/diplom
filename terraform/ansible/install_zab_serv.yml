@@ -1,0 +1,35 @@
+---
+- name: Install Zabbix Server
+  hosts: zabbix_server
+  become: yes
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Zabbix Server
+      apt:
+        name: zabbix-server-pgsql
+        state: present
+
+    - name: Install Zabbix Frontend
+      apt:
+        name: zabbix-frontend-php
+        state: present
+
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start and enable Zabbix Server service
+      systemd:
+        name: zabbix-server
+        state: started
+        enabled: yes
+
+    - name: Start and enable Apache service
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes

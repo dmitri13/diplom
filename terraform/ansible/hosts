@@ -1,0 +1,11 @@
+[web_servers]
+web-server-a.ru-central1.internal ansible_user=admin ansible_ssh_private_key_file=/home/admin/.ssh/id_rsa_ansible
+
+[elasticsearch_server]
+elasticsearch-server-b.ru-central1.internal ansible_user=admin ansible_ssh_private_key_file=/home/admin/.ssh/id_rsa_ansible
+
+[zabbix_server]
+zabbix-server-a.ru-central1.internal ansible_user=admin ansible_ssh_private_key_file=/home/admin/.ssh/id_rsa_ansible
+
+[kibana_server]
+kibana-server-a.ru-central1.internal ansible_user=admin ansible_ssh_private_key_file=/home/admin/.ssh/id_rsa_ansible

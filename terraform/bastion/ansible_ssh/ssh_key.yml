@@ -1,0 +1,27 @@
+---
+- name: Create and copy SSH key from bastion
+  hosts: bastion
+  tasks:
+    - name: Generate new SSH key pair on bastion
+      command: ssh-keygen -t rsa -b 2048 -f /home/admin/.ssh/id_rsa_ansible -N ""
+      args:
+        creates: /home/admin/.ssh/id_rsa_ansible
+
+    - name: Ensure .ssh directory exists on local
+      local_action:
+        module: file
+        path: /root/terraform
+        state: directory
+        mode: '0700'
+
+    - name: Copy private key from bastion to local
+      fetch:
+        src: /home/admin/.ssh/id_rsa_ansible
+        dest: /root/terraform/id_rsa_ansible
+        flat: yes
+
+    - name: Copy public key from bastion to local
+      fetch:
+        src: /home/admin/.ssh/id_rsa_ansible.pub
+        dest: /root/terraform/id_rsa_ansible.pub
+        flat: yes

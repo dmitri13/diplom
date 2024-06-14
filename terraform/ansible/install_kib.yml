@@ -1,0 +1,36 @@
+---
+- name: Install Kibana
+  hosts: kibana_server
+  become: yes
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install necessary packages
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+        state: present
+
+    - name: Add Elasticsearch GPG key
+      apt_key:
+        url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        state: present
+
+    - name: Add Kibana repository
+      apt_repository:
+        repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+        state: present
+
+    - name: Install Kibana
+      apt:
+        name: kibana
+        state: present
+
+    - name: Start and enable Kibana service
+      systemd:
+        name: kibana
+        state: started
+        enabled: yes

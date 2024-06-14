@@ -1,0 +1,10 @@
+#cloud-config
+users:
+  - name: admin
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAA****************************************************************usXAz21oU0KsvPxOhmTVgiCgpH2wFBITGNDcqRQDuFphv8tVnzYYoNh/LwnZEPUB9gziZMLxN4qOAXjMyKUec8HnRieacoc5nh7nZ3nSSm+0reLzuHSwbbB1pU6P1fy9dK99gxo4v3jPqmAkg7LztOFu+4O3KtAYFQWO1GFpq9Fh9SNKbhPW7jHb1A/JluBNgNku2JXdM39GZ17E3Tw00u5NtNUTZTxF1VpwiKqO2dk3FDTljEaBm0iCYqAwHgJeWZDoWqwXm/hfnuvI0mD5Waqytg9cVyQFzlduoUD1HHJJhAeg5aad dmitriy@MacPro_D
+      - ssh-rsa AAAAB3NzaC1yc2EAAAA****************************************************************5wqk1z3uo+n8GpdsYNf1kvVxdZM4t0L8Omo56F6VXxkIHGRtON7sBjpjfq7FSM+0NR/9IBUlVYDAxkzTL+CFNu7miVYPEDSb8RyrVI+ug93z+cSTf+YW135FAwubyGUvKVYnINhIsaXc5vnUcgbN0gvOwijQJ1di84EghnMJ2dun8/UZACarCrhfza+0OM46+S/1Wjb5DlupC6KKTvox5a0mi6pmGqXo2REVemps+v6yIEMWvJuf8nZ7nHKSZW/E69W5Yj6H/SSghgVa6CESvOK0b69WXcpg95G0WJJggZB9MHN32IShQrkz9stmeWLEG+CxNbF6J701uTvRoXWjwG1yZv6lbs8tP+D5A/m+Lp5363N2cCrux/RZrT7ZNPmg8NOhl8LJ29IjQTeolPpTit7Ugr2YjxZcm2LjH19axYsu6olgVzcNLp0yKzHeCk= root@user-GB
+      - .

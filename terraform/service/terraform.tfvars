@@ -1,0 +1,8 @@
+yandex_cloud_token     = "y0_AgAAA********************************"
+yandex_cloud_id   = "b1****************"
+yandex_folder_id  = "b1gad*****"
+nat_ip_address = "62.84.***.**"
+network_id = "en**************"
+private_subnet_a_id = "e9b***********"
+private_subnet_b_id = "e2l5**********"
+public_subnet_id = "e9b**************"

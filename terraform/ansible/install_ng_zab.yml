@@ -1,0 +1,30 @@
+---
+- name: Install Nginx and Zabbix Agent on Web Servers
+  hosts: web_servers
+  become: yes
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Install Zabbix Agent
+      apt:
+        name: zabbix-agent
+        state: present
+
+    - name: Start and enable Nginx service
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Start and enable Zabbix Agent service
+      systemd:
+        name: zabbix-agent
+        state: started
+        enabled: yes
