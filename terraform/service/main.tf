@@ -252,9 +252,19 @@ resource "yandex_alb_backend_group" "web_backends" {
 
 resource "yandex_alb_http_router" "web_router" {
   name = "web-http-router"
+}
 
-  labels = {
-    env = "prod"
+resource "yandex_alb_virtual_host" "web_vhost" {
+  name           = "default"
+  http_router_id = yandex_alb_http_router.web_router.id
+
+  route {
+    name = "web-route"
+    http_route {
+      http_route_action {
+        backend_group_id = yandex_alb_backend_group.web_backends.id
+      }
+    }
   }
 }
 
